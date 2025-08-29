@@ -1,0 +1,25 @@
+Higher Order Functions:-
+
+Higher Order Functions are functions that take other functions as arguments 
+or return functions as their result.
+
+some examples are :-
+1. map() :- creates a new array by applying a function to each element of the original array.
+2. filter() :- creates a new array with all elements that pass the test implemented by the provided function.
+3. reduce() :- executes a reducer function on each element of the array, resulting in a single output value.
+
+
+middlewares :-
+these are likes checks anywhere between the request and response cycle.
+they can be used for tasks such as authentication, logging, and error handling.
+
+bcrypt package :-
+this is used for hashing passwords before storing them in the database.
+also used to decrypt passwords during login. 
+based on cryptography principles.
+
+json webtoken:-
+it is a bearer token. jiske paas hai usko hum kucch data de denge.
+this is used for securely transmitting information between parties as a JSON object.
+also used for authentication and information exchange.
+based on public/private key cryptography.
