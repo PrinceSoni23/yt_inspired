@@ -12,6 +12,7 @@ some examples are :-
 middlewares :-
 these are likes checks anywhere between the request and response cycle.
 they can be used for tasks such as authentication, logging, and error handling.
+kucch bhi karne jaa rha ho toh middlewares se milkar jao.
 
 bcrypt package :-
 this is used for hashing passwords before storing them in the database.
