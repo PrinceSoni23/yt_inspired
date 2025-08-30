@@ -33,7 +33,16 @@ const registerUser = asyncHandler(async (req, res) => {
   }
 
   const avatarLocalPath = req.files?.avatar[0]?.path; //[0] because its an array and we want the first element of the array as we have maxCount 1
-  const coverImageLocalPath = req.files?.coverImage[0]?.path;
+  // const coverImageLocalPath = req.files?.coverImage[0]?.path;
+
+  let coverImageLocalPath;
+  if (
+    req.files &&
+    Array.isArray(req.files.coverImage) &&
+    req.files.coverImage.length > 0
+  ) {
+    coverImageLocalPath = req.files.coverImage[0].path;
+  }
 
   if (!avatarLocalPath) {
     //check if avatar is present or not
@@ -51,8 +60,8 @@ const registerUser = asyncHandler(async (req, res) => {
   //create user object - create entry in db
   const user = await User.create({
     fullName,
-    avatar: avatar.url,
-    coverImage: coverImage?.url || "",
+    avatar: avatar,
+    coverImage: coverImage || "",
     email,
     password,
     username: username.toLowerCase(),
