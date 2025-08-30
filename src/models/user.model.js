@@ -3,7 +3,7 @@
 
 import mongoose, { Schema } from "mongoose";
 import jwt from "jsonwebtoken";
-import bcrypt from "bcryptjs";
+import bcrypt from "bcrypt";
 
 const userSchema = new Schema(
   {
@@ -42,7 +42,7 @@ const userSchema = new Schema(
 
     watchHistory: [
       {
-        types: Schema.Types.ObjectId,
+        type: Schema.Types.ObjectId,
         ref: "Video",
       },
     ],
@@ -62,7 +62,7 @@ const userSchema = new Schema(
 userSchema.pre("save", async function (next) {
   //we dont use arrow function here because we want to use "this" keyword
   //perform some action on data or this function before you "save"
-  if (this.isModified("password")) return next(); //if password modify nahi hua hai then next pe jump kar jao
+  if (!this.isModified("password")) return next(); //if password modify nahi hua hai then next pe jump kar jao
 
   this.password = await bcrypt.hash(this.password, 10); //do this only when password is modified only
   next();
@@ -102,4 +102,4 @@ userSchema.methods.generateRefreshToken = async function () {
   );
 };
 
-export const user = mongoose.model("user", userSchema);
+export const User = mongoose.model("User", userSchema);

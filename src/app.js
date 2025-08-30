@@ -17,4 +17,12 @@ app.use(express.static("public")); //for storing file and folder in folder named
 
 app.use(cookieParser()); //for performing crud operations on the cookies of the user browser by the server
 
+// step 3: import the user routes here
+
+//User Routes
+import userRouter from "./routes/user.routes.js";
+
+//Routes Decleration
+app.use("/api/v1/users", userRouter);
+
 export { app };

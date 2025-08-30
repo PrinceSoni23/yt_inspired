@@ -4,6 +4,8 @@ import connectDB from "./db/index.js"; //make a connectDb function somewhere els
 //  creaating a function here will require much logic and code in the same file which makes the code not
 // readable and also creates a mess.
 
+import { app } from "./app.js";
+
 dotenv.config({
   path: "./env",
 });

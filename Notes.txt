@@ -24,3 +24,97 @@ it is a bearer token. jiske paas hai usko hum kucch data de denge.
 this is used for securely transmitting information between parties as a JSON object.
 also used for authentication and information exchange.
 based on public/private key cryptography.
+
+
+
+
+
+---------------------------------------------HTTP Crash Course Notes-------------------------------------------------
+
+HTTP is a protocol used for communication between clients and servers on the web.
+it is stateless, meaning each request is independent and does not retain any information about previous requests
+
+and
+
+HTTPS is the secure version of HTTP, using encryption (SSL/TLS) to protect data during transmission.
+Bas ek layer of security add kar deta hai. nothing else 
+in between client and server  , data readable na ho.
+
+
+
+------------------------------------------------------------------------------------------------------------------
+
+What are Headers?
+Headers are metadata of key-value pairs sent in HTTP requests and responses to provide additional information about the request or response.
+
+used in :-
+
+caching :- to store copies of resources to reduce server load and improve performance.
+authentication :- to verify the identity of users and control access to resources.
+content negotiation :- to determine the best format for the response based on client preferences.
+cross-origin resource sharing (CORS) :- to control access to resources from different origins for security purposes.
+manage states :- to maintain user sessions and track user activity across multiple requests.(cart me kya hai etc)
+
+
+
+Request Headers :-from client
+
+Response Headers :- from server
+
+Representational Headers :- (encoding/compression) describe the body of the resource (Content-Type, Content-Length, Content-Encoding)
+
+Payload Headers :- data (id , email , password etc)
+
+
+
+MOST COMMAN HEADER :-
+
+Accept :- tells the server what content types the client can process (e.g., text/html, application/json).
+
+User-Agent :- provides information about the client's browser and operating system.
+
+Authorization :- contains credentials for authenticating the client to the server (e.g., Bearer token).
+
+Content-Type :- indicates the media type of the resource being sent to the server (e.g., application/json).
+
+cookie :- stores data on the client side to maintain stateful information (e.g., session ID).
+
+cache-control :- specifies caching directives for both requests and responses (e.g., no-cache, max-age).
+
+
+CORS Headers :- (Cross-Origin Resource Sharing)
+Access Control-Allow-Origin, Access-Control-Allow-Methods, Access-Control-Allow-credentials
+SECURITY HEADERS :- (Content-Security-Policy, X-Content-Type-Options, X-Frame-Options, Strict-Transport-Security)
+
+------------------------------------------------------------------------------------------------------------------
+
+URL (Uniform Resource Locator) is the address used to access resources on the web.
+
+URN (Uniform Resource Name) is a unique identifier for a resource, independent of its location.
+
+URI (Uniform Resource Identifier) is a string that identifies a resource, which can be either a URL or a URN.
+
+
+
+------------------------------------------------------------------------------------------------------------------
+
+Common HTTP Methods:
+1. GET: Retrieve data from a server.    
+2. POST: Send data to a server to create a new resource.
+3. PUT: Update an existing resource on the server. {changing entire object}
+4. DELETE: Remove a resource from the server.
+5. PATCH: Partially update an existing resource on the server. {changing part or we can say a field of the object}
+6. HEAD: Retrieve only the headers of a resource, without the body.
+7. OPTIONS: what operations are available for a resource.
+8. TRACE: traces the full path that a request takes to reach the server.
+
+
+------------------------------------------------------------------------------------------------------------------
+
+HTTP Status Codes:-
+
+1xx (Informational): The request was received, continuing process.
+2xx (Successful): The request was successfully received, understood, and accepted.  
+3xx (Redirection): Further action needs to be taken in order to complete the request.
+4xx (Client Error): The request contains bad syntax or cannot be fulfilled.
+5xx (Server Error): The server failed to fulfill an apparently valid request.
